@@ -29,5 +29,8 @@
   },
   "workspaces": [
     "services"
-  ]
+  ],
+  "dependencies": {
+    "aws-sdk": "^2.1163.0"
+  }
 }
