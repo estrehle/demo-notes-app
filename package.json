@@ -1,0 +1,33 @@
+{
+  "name": "notes",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "sst start",
+    "build": "sst build",
+    "deploy": "sst deploy --stage=production",
+    "remove": "sst remove",
+    "console": "sst console",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "format": "prettier --write \"frontend/**/*.ts\" \"services/**/*.ts\" \"stacks/**/*.ts\"",
+    "lint": "eslint \"{frontend,services,stacks}/**/*.ts\" --fix"
+  },
+  "devDependencies": {
+    "@serverless-stack/cli": "^1.2.32",
+    "@serverless-stack/resources": "^1.2.32",
+    "@tsconfig/node16": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "aws-cdk-lib": "2.24.0",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.1.0",
+    "prettier": "^2.7.1",
+    "typescript": "~4.6.4",
+    "vitest": "^0.16.0"
+  },
+  "workspaces": [
+    "services"
+  ]
+}
