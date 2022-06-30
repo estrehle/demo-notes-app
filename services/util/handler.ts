@@ -1,17 +1,10 @@
-import {
-  APIGatewayProxyEventV2,
-  APIGatewayProxyHandlerV2,
-  APIGatewayProxyResultV2,
-  Context,
-} from 'aws-lambda';
+import { Context } from 'aws-lambda';
+import { ApiEvent, ApiHandler } from '../models/api-event';
 
 export const handler = (
-  lambda: (event: APIGatewayProxyEventV2, context: Context) => Promise<any>,
-): APIGatewayProxyHandlerV2 => {
-  return async function (
-    event: APIGatewayProxyEventV2,
-    context: Context,
-  ): Promise<APIGatewayProxyResultV2> {
+  lambda: (event: ApiEvent, context: Context) => Promise<any>,
+): ApiHandler => {
+  return async function (event: ApiEvent, context: Context) {
     let body: any;
     let statusCode: number;
 

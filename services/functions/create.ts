@@ -13,7 +13,7 @@ export const main = handler(async (event) => {
   const params: PutItemInput = {
     TableName: env.TABLE_NAME,
     Item: {
-      userId: '123',
+      userId: event.requestContext.authorizer.iam.cognitoIdentity.identityId,
       noteId: uuidV1(),
       attachment: data.attachment ?? null,
       content: data.content ?? null,

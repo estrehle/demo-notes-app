@@ -6,7 +6,7 @@ export const main = handler(async (event) => {
   const params: DeleteItemInput = {
     TableName: env.TABLE_NAME,
     Key: {
-      userId: '123',
+      userId: event.requestContext.authorizer.iam.cognitoIdentity.identityId,
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       noteId: event.pathParameters!.id!,
     },
