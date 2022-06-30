@@ -1,7 +1,7 @@
 import { v1 as uuidV1 } from 'uuid';
 import { CreateNoteReqDto } from '../models/create-note.req.dto';
 import { dynamoDb, PutItemInput } from '../util/dynamodb';
-import { env } from '../util/env';
+import { env } from '../../util/env';
 import { handler } from '../util/handler';
 
 export const main = handler(async (event) => {

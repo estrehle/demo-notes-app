@@ -1,6 +1,6 @@
 import { UpdateNoteReqDto } from '../models/replace-note.req.dto';
 import { dynamoDb, UpdateItemInput } from '../util/dynamodb';
-import { env } from '../util/env';
+import { env } from '../../util/env';
 import { handler } from '../util/handler';
 
 export const main = handler(async (event) => {

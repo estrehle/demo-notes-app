@@ -1,4 +1,5 @@
 import { Api, StackContext, use } from '@serverless-stack/resources';
+import { env } from '../util/env';
 import { StorageStack } from './StorageStack';
 
 export function ApiStack({ stack }: StackContext) {
@@ -10,11 +11,13 @@ export function ApiStack({ stack }: StackContext) {
       function: {
         permissions: [table],
         environment: {
+          STRIPE_SECRET_KEY: env.STRIPE_SECRET_KEY,
           TABLE_NAME: table.tableName,
         },
       },
     },
     routes: {
+      'POST /billing': 'functions/billing.main',
       'GET /notes': 'functions/list.main',
       'POST /notes': 'functions/create.main',
       'DELETE /notes/{id}': 'functions/delete.main',
