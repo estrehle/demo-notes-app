@@ -1,0 +1,23 @@
+body {
+  color: #333;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "PT Serif", serif;
+}
+
+input.form-control,
+select.form-control,
+textarea.form-control {
+  font-size: 1rem;
+}
+
+input[type="file"] {
+  width: 100%;
+}
